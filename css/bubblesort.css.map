@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,IAAI,CAAC;EACD,gBAAgB,EAAE,OAAa;EAC/B,KAAK,EAAE,IAAI;CAKd;;AAPD,AAII,IAJA,CAIA,CAAC,CAAC;EACE,MAAM,EAAE,KAAK;CAChB",
+    "sources": [
+        "bubblesort.scss"
+    ],
+    "names": [],
+    "file": "bubblesort.css"
+}
