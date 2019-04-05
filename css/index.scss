@@ -38,6 +38,14 @@ body {
                 &:hover {
                     text-decoration: underline;
                 }
+
+                &.undone {
+                    cursor: text;
+                    color: #cecece;
+                    &:hover {
+                        text-decoration: inherit;
+                    }
+                }
             }
         }
     }

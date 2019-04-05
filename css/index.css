@@ -72,4 +72,13 @@ body ul li a {
 body ul li a:hover {
   text-decoration: underline;
 }
+
+body ul li a.undone {
+  cursor: text;
+  color: #cecece;
+}
+
+body ul li a.undone:hover {
+  text-decoration: inherit;
+}
 /*# sourceMappingURL=index.css.map */
