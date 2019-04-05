@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
+html, body {
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  -ms-grid-rows: 250px auto;
+      grid-template-rows: 250px auto;
+      grid-template-areas: "header" "list";
+}
+
+body header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: header;
+  font-size: 65px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body header small {
+  margin-top: 1em;
+  font-size: 20px;
+}
+
+body ul {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: list;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body ul li {
+  margin: .5em 0;
+}
+
+body ul li a {
+  text-decoration: none;
+}
+
+body ul li a:hover {
+  text-decoration: underline;
+}
+/*# sourceMappingURL=index.css.map */
