@@ -40,6 +40,12 @@ function setup() {
   init();
 }
 
+function keyPressed() {
+  if (key == "r") {
+    init();
+  }
+}
+
 function windowResized() {
   resizeCanvas(windowWidth, 400);
   init();
