@@ -1,6 +1,7 @@
 let i = 0;
 let wV = 10;
 let speedV = 25;
+let iters = 1;
 let showPivotV = false;
 
 let values;
@@ -20,9 +21,15 @@ function setup() {
     init();
   });
 
-  speed = createSlider(0, 25, speedV, 1);
+  speed = createSlider(0, 50, speedV, 1);
+  speedV = 0;
   speed.changed(()=>{
-    speedV = speed.value();
+    speedV = constrain(map(speed.value(), 0, 25, 25, 0), 0, 25);
+    if (speed.value() > 25) {
+      iters = floor(map(speed.value(), 25, 50, 1, 10));
+    } else {
+      iters = 1;
+    }
   });
 
   showPivot = createCheckbox("Show pivots?", showPivotV);
@@ -63,9 +70,11 @@ async function partition(arr, start, end) {
   let pivotIndex = start;
   let pivotValue = arr[end];
   states[pivotIndex] = true;
+  let iter = 0;
   for (let i = start; i < end; i++) {
     if (arr[i] < pivotValue) {
-      await swap(arr, i, pivotIndex);
+      await swap(arr, i, pivotIndex, iter);
+      iter++;
       states[pivotIndex] = false;
       pivotIndex++;
       states[pivotIndex] = true;
@@ -77,7 +86,7 @@ async function partition(arr, start, end) {
 
 function draw() {
   background(51);
-  
+
   for (let i = 0; i < values.length; i++) {
     noStroke();
     fill(255);
@@ -88,8 +97,8 @@ function draw() {
   }
 }
 
-async function swap(arr, a, b) {
-  if (speedV > 0) await sleep(speedV);
+async function swap(arr, a, b, iter) {
+  if (iter % iters == 0) await sleep(speedV);
   let temp = arr[a];
   arr[a] = arr[b];
   arr[b] = temp;
