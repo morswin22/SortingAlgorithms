@@ -1,25 +1,73 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
+
 html, body {
   padding: 0;
+  margin: 0;
 }
 
 body {
   font-family: 'Montserrat', sans-serif;
 }
 
-body {
-  display: -webkit-box;
-  display: -ms-flexbox;
+header {
+  height: 250px;
+  text-align: center;
+  grid-area: header;
+  font-size: 65px;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-/*# sourceMappingURL=main.css.map */
+
+header small {
+  margin-top: 1em;
+  font-size: 20px;
+}
+
+.hide {
+  display: none!important;
+}
+
+#navbar {
+  grid-area: list;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#navbar a {
+  margin: .5em 0;
+  text-decoration: none;
+}
+
+#navbar a:hover {
+  text-decoration: underline;
+}
+
+#navbar a[href="#"] {
+  cursor: text;
+  color: #cecece;
+  cursor: default;
+}
+
+#navbar a[href="#"]:hover {
+  text-decoration: inherit;
+}
+
+#display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#display > * {
+  padding: 5px 0;
+}
+
+#display input[type=range] {
+  margin: 0 5px;
+}
